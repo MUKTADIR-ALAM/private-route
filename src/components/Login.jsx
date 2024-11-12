@@ -4,10 +4,9 @@ export default function Login() {
 
     const handleLogin = e => {
         e.preventDefault();
-        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name,email,password);
+        console.log(email,password);
     }
 
   return (
@@ -18,18 +17,6 @@ export default function Login() {
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleLogin} className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="name"
-                className="input input-bordered"
-                required
-              />
-            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

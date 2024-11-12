@@ -1,12 +1,20 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/Authprovider";
 
 export default function Login() {
+
+  const {logInUser} = useContext(AuthContext);
+  const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password);
+        logInUser(email,password);
+        e.target.reset();
+        navigate('/')
+
     }
 
   return (
